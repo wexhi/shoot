@@ -1,0 +1,403 @@
+[2023-10-20 23:43:36]	[done]
+	build successfully !
+
+[2023-10-20 23:44:22]	[done]
+	build successfully !
+
+[2023-10-20 23:56:56]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\AlgorithmLayer\pid.h", line 32: Error:  #20: identifier "PIDController" is undefined
+  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb)
+                     ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 65: Error:  #130: expected a "{"
+  typedef enum
+  ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 68: Error:  #20: identifier "NonMaskableInt_IRQn" is undefined
+    NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                                          */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 69: Error:  #20: identifier "MemoryManagement_IRQn" is undefined
+    MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M4 Memory Management Interrupt                           */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 70: Error:  #20: identifier "BusFault_IRQn" is undefined
+    BusFault_IRQn               = -11,    /*!< 5 Cortex-M4 Bus Fault Interrupt                                   */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 71: Error:  #20: identifier "UsageFault_IRQn" is undefined
+    UsageFault_IRQn             = -10,    /*!< 6 Cortex-M4 Usage Fault Interrupt                                 */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 72: Error:  #20: identifier "SVCall_IRQn" is undefined
+    SVCall_IRQn                 = -5,     /*!< 11 Cortex-M4 SV Call Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 73: Error:  #20: identifier "DebugMonitor_IRQn" is undefined
+    DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M4 Debug Monitor Interrupt                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 74: Error:  #20: identifier "PendSV_IRQn" is undefined
+    PendSV_IRQn                 = -2,     /*!< 14 Cortex-M4 Pend SV Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 75: Error:  #20: identifier "SysTick_IRQn" is undefined
+    SysTick_IRQn                = -1,     /*!< 15 Cortex-M4 System Tick Interrupt                                */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 77: Error:  #20: identifier "WWDG_IRQn" is undefined
+    WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                                         */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 78: Error:  #20: identifier "PVD_IRQn" is undefined
+    PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt                         */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 79: Error:  #20: identifier "TAMP_STAMP_IRQn" is undefined
+    TAMP_STAMP_IRQn             = 2,      /*!< Tamper and TimeStamp interrupts through the EXTI line             */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 80: Error:  #20: identifier "RTC_WKUP_IRQn" is undefined
+    RTC_WKUP_IRQn               = 3,      /*!< RTC Wakeup interrupt through the EXTI line                        */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 81: Error:  #20: identifier "FLASH_IRQn" is undefined
+    FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                                            */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 82: Error:  #20: identifier "RCC_IRQn" is undefined
+    RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 83: Error:  #20: identifier "EXTI0_IRQn" is undefined
+    EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 84: Error:  #20: identifier "EXTI1_IRQn" is undefined
+    EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 85: Error:  #20: identifier "EXTI2_IRQn" is undefined
+    EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 86: Error:  #20: identifier "EXTI3_IRQn" is undefined
+    EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 87: Error:  #20: identifier "EXTI4_IRQn" is undefined
+    EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                              */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 88: Error:  #20: identifier "DMA1_Stream0_IRQn" is undefined
+    DMA1_Stream0_IRQn           = 11,     /*!< DMA1 Stream 0 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 89: Error:  #20: identifier "DMA1_Stream1_IRQn" is undefined
+    DMA1_Stream1_IRQn           = 12,     /*!< DMA1 Stream 1 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 90: Error:  #20: identifier "DMA1_Stream2_IRQn" is undefined
+    DMA1_Stream2_IRQn           = 13,     /*!< DMA1 Stream 2 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 91: Error:  #20: identifier "DMA1_Stream3_IRQn" is undefined
+    DMA1_Stream3_IRQn           = 14,     /*!< DMA1 Stream 3 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 92: Error:  #20: identifier "DMA1_Stream4_IRQn" is undefined
+    DMA1_Stream4_IRQn           = 15,     /*!< DMA1 Stream 4 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 93: Error:  #20: identifier "DMA1_Stream5_IRQn" is undefined
+    DMA1_Stream5_IRQn           = 16,     /*!< DMA1 Stream 5 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 94: Error:  #20: identifier "DMA1_Stream6_IRQn" is undefined
+    DMA1_Stream6_IRQn           = 17,     /*!< DMA1 Stream 6 global Interrupt                                    */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 95: Error:  #20: identifier "ADC_IRQn" is undefined
+    ADC_IRQn                    = 18,     /*!< ADC1, ADC2 and ADC3 global Interrupts                             */
+    ^
+"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 96: Error:  #20: identifier "CAN1_TX_IRQn" is undefined
+    CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
+    ^
+.\..\User\AlgorithmLayer\pid.c: 0 warnings, 30 errors
+
+[2023-10-20 23:57:08]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\AlgorithmLayer\pid.h", line 32: Error:  #20: identifier "PIDController" is undefined
+  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb);
+                     ^
+".\..\User\AlgorithmLayer\pid.c", line 54: Error:  #20: identifier "PIDController" is undefined
+  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb)
+                     ^
+.\..\User\AlgorithmLayer\pid.c: 0 warnings, 2 errors
+
+[2023-10-21 00:00:28]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\AlgorithmLayer\pid.c", line 54: Error:  #20: identifier "PIDController" is undefined
+  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb)
+                     ^
+.\..\User\AlgorithmLayer\pid.c: 0 warnings, 1 error
+
+[2023-10-21 00:00:46]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_error[1] = pid->speed_error[0];
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_error[1] = pid->speed_error[0];
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 58: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
+      pid->speed_feedback = speed_fdb;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_setpoint"
+      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
+      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
+                                                       ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_output"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kp_speed"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                               ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                               ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Ki_speed"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                     ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_integral"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                     ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kd_speed"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                                           ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                                                            ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                                                                                  ^
+".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "speed_output"
+      if (pid->speed_output > pid->max_speed)
+               ^
+".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "max_speed"
+      if (pid->speed_output > pid->max_speed)
+                                   ^
+".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "speed_output"
+          pid->speed_output = pid->max_speed;
+               ^
+".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "max_speed"
+          pid->speed_output = pid->max_speed;
+                                   ^
+".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "speed_output"
+      else if (pid->speed_output < -pid->max_speed)
+                    ^
+".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "max_speed"
+      else if (pid->speed_output < -pid->max_speed)
+                                         ^
+".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "speed_output"
+          pid->speed_output = -pid->max_speed;
+               ^
+".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "max_speed"
+          pid->speed_output = -pid->max_speed;
+                                    ^
+".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_integral"
+      pid->speed_integral += pid->speed_error[0];
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_integral += pid->speed_error[0];
+                                  ^
+".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
+      pid->angle_error[1] = pid->angle_error[0];
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
+      pid->angle_error[1] = pid->angle_error[0];
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 79: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
+      pid->angle_feedback = angle_fdb;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_error"
+      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_setpoint"
+      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
+      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
+                                                       ^
+.\..\User\AlgorithmLayer\pid.c: 0 warnings, 30 errors
+
+[2023-10-21 00:01:27]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol pid_calc (referred from Chassis_task.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2023-10-21 00:04:47]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_error[1] = pid->speed_error[0];
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_error[1] = pid->speed_error[0];
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 58: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
+      pid->speed_feedback = speed_fdb;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_setpoint"
+      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
+      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
+                                                       ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_output"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kp_speed"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                               ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                               ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Ki_speed"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                     ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_integral"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                     ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kd_speed"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                                           ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                                                            ^
+".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
+                                                                                                                                                  ^
+".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "speed_output"
+      if (pid->speed_output > pid->max_speed)
+               ^
+".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "max_speed"
+      if (pid->speed_output > pid->max_speed)
+                                   ^
+".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "speed_output"
+          pid->speed_output = pid->max_speed;
+               ^
+".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "max_speed"
+          pid->speed_output = pid->max_speed;
+                                   ^
+".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "speed_output"
+      else if (pid->speed_output < -pid->max_speed)
+                    ^
+".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "max_speed"
+      else if (pid->speed_output < -pid->max_speed)
+                                         ^
+".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "speed_output"
+          pid->speed_output = -pid->max_speed;
+               ^
+".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "max_speed"
+          pid->speed_output = -pid->max_speed;
+                                    ^
+".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_integral"
+      pid->speed_integral += pid->speed_error[0];
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_error"
+      pid->speed_integral += pid->speed_error[0];
+                                  ^
+".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
+      pid->angle_error[1] = pid->angle_error[0];
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
+      pid->angle_error[1] = pid->angle_error[0];
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 79: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
+      pid->angle_feedback = angle_fdb;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_error"
+      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
+           ^
+".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_setpoint"
+      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
+                                 ^
+".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
+      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
+                                                       ^
+.\..\User\AlgorithmLayer\pid.c: 0 warnings, 30 errors
+
+[2023-10-21 00:04:58]	[done]
+	build successfully !
+
+[2023-10-21 00:07:21]	[done]
+	build successfully !
+
+[2023-10-21 00:10:09]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\Task\Chassis_task.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.d .\..\User\Task\Chassis_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\Chassis_task.c", line 14: Error:  #65: expected a ";"
+  pid_struct_t supercap_pid;
+  ^
+".\..\User\Task\Chassis_task.c", line 15: Error:  #147: declaration is incompatible with "int16_t target_angle" (declared at line 110 of "../Inc/main.h")
+  uint16_t target_angle = 0;
+           ^
+".\..\User\Task\Chassis_task.c", line 50: Error:  #20: identifier "supercap_pid" is undefined
+    pid_init(&supercap_pid, superpid, 3000, 3000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+              ^
+.\..\User\Task\Chassis_task.c: 0 warnings, 3 errors
+
+[2023-10-21 00:10:38]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\Task\Chassis_task.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.d .\..\User\Task\Chassis_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\Chassis_task.c", line 14: Error:  #65: expected a ";"
+  pid_struct_t supercap_pid;
+  ^
+".\..\User\Task\Chassis_task.c", line 15: Error:  #147: declaration is incompatible with "int16_t target_angle" (declared at line 110 of "../Inc/main.h")
+  uint16_t target_angle = 0;
+           ^
+.\..\User\Task\Chassis_task.c: 0 warnings, 2 errors
+
+[2023-10-21 00:10:51]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\Task\Chassis_task.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.d .\..\User\Task\Chassis_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\Chassis_task.c", line 15: Error:  #147: declaration is incompatible with "int16_t target_angle" (declared at line 110 of "../Inc/main.h")
+  uint16_t target_angle = 0;
+           ^
+.\..\User\Task\Chassis_task.c: 0 warnings, 1 error
+
+[2023-10-21 00:11:28]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6200E: Symbol target_angle multiply defined (by Chassis_task.o and main.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+
+
+[2023-10-21 00:12:09]	[done]
+	build successfully !
+
+[2023-10-21 00:12:19]	[done]
+	build successfully !
+
+[2023-10-21 00:12:36]	[done]
+	build successfully !
+
+[2023-10-21 00:14:35]	[done]
+	build successfully !
+
+[2023-10-21 00:15:32]	[done]
+	build successfully !
+
+[2023-10-21 00:17:51]	[done]
+	build successfully !
+
+[2023-10-21 00:25:13]	[done]
+	build successfully !
+
