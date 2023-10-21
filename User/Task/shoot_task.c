@@ -2,6 +2,7 @@
 #include "shoot_task.h"
 #include "cmsis_os.h"
 #include "drv_can.h"
+#include <stdlib.h>
 
 extern RC_ctrl_t rc_ctrl;
 
@@ -13,9 +14,9 @@ shoot_task_t shoot_task;
 // 发射机构初始化
 void shoot_task_init(void)
 {
-    shoot_task.speed_motor_pid[0] = 30;  // 速度环pid->kp
-    shoot_task.speed_motor_pid[1] = 0.5; // 速度环pid->ki
-    shoot_task.speed_motor_pid[2] = 10;  // 速度环pid->kd
+    shoot_task.speed_motor_pid[0] = 8;  // 速度环pid->kp
+    shoot_task.speed_motor_pid[1] = 0.9; // 速度环pid->ki
+    shoot_task.speed_motor_pid[2] = 0;  // 速度环pid->kd
     shoot_task.angle_pid[0] = 30;        // 角度环pid->kp
     shoot_task.angle_pid[1] = 0.5;       // 角度环pid->ki
     shoot_task.angle_pid[2] = 10;        // 角度环pid->kd
@@ -25,7 +26,7 @@ void shoot_task_init(void)
     shoot_task.fric_speed_target[1] = 0; // 摩擦轮电机目标值
 
     pid_init(&shoot_task.shoot_angle_pid, shoot_task.angle_pid, 2.0f * PI, 2.0f * PI); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-    pid_init(&shoot_task.shoot_motor_pid, shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+    pid_init(&shoot_task.shoot_motor_pid, shoot_task.speed_motor_pid, 1500, 1500);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
     pid_init(&shoot_task.friction_pid[0], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
     pid_init(&shoot_task.friction_pid[1], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
 }
@@ -84,7 +85,12 @@ void Shoot_task(void const *pvParameters)
 {
     shoot_task_init();
     start_angle = shoot_task.motor_info[2].real_angle;
-    shoot_task.angle_target = shoot_task.motor_info[2].real_angle + 100;
+    shoot_task.angle_target = shoot_task.motor_info[2].real_angle + 45;
+    if (shoot_task.angle_target > 360)
+    {
+        shoot_task.angle_target -= 360;
+    }
+
     for (;;)
     {
         if (rc_ctrl.rc.s[0] == 1)
@@ -113,7 +119,7 @@ void Shoot_task(void const *pvParameters)
             LEDR_ON();
             LEDB_OFF();
             LEDG_OFF();
-            if (shoot_task.angle_target - shoot_task.motor_info[2].real_angle > 1)
+            if (abs(shoot_task.angle_target - shoot_task.motor_info[2].real_angle) > 5 )
             {
                 shoot_brust();
             }
