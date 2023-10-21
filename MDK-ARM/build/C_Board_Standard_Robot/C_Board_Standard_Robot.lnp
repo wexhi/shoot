@@ -1,4 +1,4 @@
---cpu Cortex-M4.fp --library_type=microlib --scatter "c:/Users/14775/Desktop/study/robomaster/shoot/MDK-ARM/build/C_Board_Standard_Robot/C_Board_Standard_Robot.sct" --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
+--cpu Cortex-M4.fp --library_type=microlib --scatter "c:/Users/wexhi/Desktop/study/shoot/MDK-ARM/build/C_Board_Standard_Robot/C_Board_Standard_Robot.sct" --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
 --list .\build\C_Board_Standard_Robot\C_Board_Standard_Robot.map
 .\build\C_Board_Standard_Robot\__\Application\ins_task.o
 .\build\C_Board_Standard_Robot\__\Bsp\bsp_PWM.o
@@ -58,7 +58,7 @@
 .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_usart.o
 .\build\C_Board_Standard_Robot\__\User\PotocaLayer\judge.o
 .\build\C_Board_Standard_Robot\__\User\PotocaLayer\rc_potocal.o
-.\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o
+.\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o
 .\build\C_Board_Standard_Robot\EXCHANGE.o
 .\build\C_Board_Standard_Robot\startup_stm32f407xx.o
 .\..\Drivers\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib -o .\build\C_Board_Standard_Robot\C_Board_Standard_Robot.axf

@@ -10,7 +10,7 @@
 #define motor_min -900
 
 pid_struct_t motor_pid_shoot[3];
-pid_struct_t friction_pid;             //拨盘电机pid结构体
+pid_struct_t friction_pid; // 拨盘电机pid结构体
 pid_struct_t supercap_pid;
 int16_t targetAngle;
 motor_info_t motor_info_shoot[8];        // 电机信息结构体
@@ -47,34 +47,34 @@ void Shoot_task(void const *pvParameters)
     pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
   }
   pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-  
+
   for (;;)
   {
-    if (rc_ctrl.rc.s[0] == 1)
-    {
-      LEDR_ON();
-      LEDB_OFF();
-      LEDG_OFF();
-      shoot_brust();
-    }
-    else if (rc_ctrl.rc.s[0] == 2)
-    {
-      LEDR_OFF();
-      LEDB_OFF();
-      LEDG_ON();
-      stop_shoot();
-    }
-    else if (rc_ctrl.rc.s[0] == 3)
-    {
-      LEDR_OFF();
-      LEDB_ON();
-      LEDG_OFF();
-      shoot_single();
-    }
-    else
-    {
-      stop_shoot();
-    }
+    // if (rc_ctrl.rc.s[0] == 1)
+    // {
+    //   LEDR_ON();
+    //   LEDB_OFF();
+    //   LEDG_OFF();
+    //   shoot_brust();
+    // }
+    // else if (rc_ctrl.rc.s[0] == 2)
+    // {
+    //   LEDR_OFF();
+    //   LEDB_OFF();
+    //   LEDG_ON();
+    //   stop_shoot();
+    // }
+    // else if (rc_ctrl.rc.s[0] == 3)
+    // {
+    //   LEDR_OFF();
+    //   LEDB_ON();
+    //   LEDG_OFF();
+    //   shoot_single();
+    // }
+    // else
+    // {
+    //   stop_shoot();
+    // }
 
     osDelay(1);
   }
@@ -113,7 +113,7 @@ void chassis_current_give()
 
   uint8_t i = 0;
 
-  for (i = 0; i < 3; i++)
+  for (i = 0; i < 4; i++)
   {
     motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
   }
@@ -149,19 +149,16 @@ static void shoot_single(void)
   // 电机速度与遥控器通道的对应关系
   motor_speed_target[0] = 0;
   motor_speed_target[1] = 0;
-  motor_speed_target[2] = 200;
   targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-  if (targetAngle <= 0  || targetAngle >= 6000)
+  if (targetAngle <= 0 || targetAngle >= 6000)
   {
     targetAngle = 0;
   }
 
-  
-
   // 电机电流控制
   motor_info_shoot[0].set_current = pid_calc(&motor_pid_shoot[0], motor_info_shoot[0].rotor_speed, motor_speed_target[0]);
   motor_info_shoot[1].set_current = pid_calc(&motor_pid_shoot[1], motor_info_shoot[1].rotor_speed, motor_speed_target[1]);
-  
+
   // 角度控制
   // motor_info_shoot[2].set_current = pid_calc(&motor_pid_shoot[2], motor_info_shoot[2].rotor_speed, targetAngle);
 

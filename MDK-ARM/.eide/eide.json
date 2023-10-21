@@ -249,6 +249,9 @@
             "path": "../User/Task/Chassis_task.c"
           },
           {
+            "path": "../User/Task/shoot_task.c"
+          },
+          {
             "path": "../User/Task/UI_task.c"
           },
           {
@@ -292,7 +295,8 @@
   "targets": {
     "C_Board_Standard_Robot": {
       "excludeList": [
-        "<virtual_root>/RTOS TASK/UI_task.c"
+        "<virtual_root>/RTOS TASK/UI_task.c",
+        "<virtual_root>/RTOS TASK/Chassis_task.c"
       ],
       "toolchain": "AC5",
       "compileConfig": {

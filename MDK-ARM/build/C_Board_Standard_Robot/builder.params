@@ -2,12 +2,12 @@
     "name": "C_Board_Standard_Robot",
     "target": "C_Board_Standard_Robot",
     "toolchain": "AC5",
-    "toolchainLocation": "C:\\Keil_v5\\ARM\\ARMCC",
-    "toolchainCfgFile": "c:\\Users\\14775\\.vscode\\extensions\\cl.eide-3.13.2023060401\\res\\data\\models\\win32/arm.v5.model.json",
+    "toolchainLocation": "c:\\Keil_v5\\ARM\\ARMCC",
+    "toolchainCfgFile": "c:\\Users\\wexhi\\.vscode\\extensions\\cl.eide-3.13.2023060401\\res\\data\\models\\win32/arm.v5.model.json",
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,
-    "rootDir": "c:\\Users\\14775\\Desktop\\study\\robomaster\\shoot\\MDK-ARM",
+    "rootDir": "c:\\Users\\wexhi\\Desktop\\study\\shoot\\MDK-ARM",
     "dumpPath": "build\\C_Board_Standard_Robot",
     "outDir": "build\\C_Board_Standard_Robot",
     "ram": 131072,
@@ -103,19 +103,19 @@
         "../User/DriverLayer/drv_usart.c",
         "../User/PotocaLayer/judge.c",
         "../User/PotocaLayer/rc_potocal.c",
-        "../User/Task/Chassis_task.c",
+        "../User/Task/shoot_task.c",
         "EXCHANGE.c",
         "startup_stm32f407xx.s"
     ],
     "sourceParams": {},
-    "sourceParamsMtime": 1695627355733.2676,
+    "sourceParamsMtime": 1697858900362.984,
     "options": {
         "version": 4,
         "beforeBuildTasks": [],
         "afterBuildTasks": [
             {
                 "name": "axf to elf",
-                "command": "axf2elf -d \"C:\\Keil_v5\\ARM\\ARMCC\" -b \"${outDir}\\C_Board_Standard_Robot.bin\" -i \"${outDir}\\C_Board_Standard_Robot.axf\" -o \"${outDir}\\C_Board_Standard_Robot.elf\" > \"${outDir}\\axf2elf.log\""
+                "command": "axf2elf -d \"c:\\Keil_v5\\ARM\\ARMCC\" -b \"${outDir}\\C_Board_Standard_Robot.bin\" -i \"${outDir}\\C_Board_Standard_Robot.axf\" -o \"${outDir}\\C_Board_Standard_Robot.elf\" > \"${outDir}\\axf2elf.log\""
             }
         ],
         "global": {
@@ -141,35 +141,35 @@
             "ro-base": "0x08000000",
             "rw-base": "0x20000000",
             "link-scatter": [
-                "\"c:/Users/14775/Desktop/study/robomaster/shoot/MDK-ARM/build/C_Board_Standard_Robot/C_Board_Standard_Robot.sct\""
+                "\"c:/Users/wexhi/Desktop/study/shoot/MDK-ARM/build/C_Board_Standard_Robot/C_Board_Standard_Robot.sct\""
             ]
         }
     },
     "env": {
-        "workspaceFolder": "c:\\Users\\14775\\Desktop\\study\\robomaster\\shoot\\MDK-ARM",
+        "workspaceFolder": "c:\\Users\\wexhi\\Desktop\\study\\shoot\\MDK-ARM",
         "workspaceFolderBasename": "MDK-ARM",
-        "OutDir": "c:\\Users\\14775\\Desktop\\study\\robomaster\\shoot\\MDK-ARM\\build\\C_Board_Standard_Robot",
+        "OutDir": "c:\\Users\\wexhi\\Desktop\\study\\shoot\\MDK-ARM\\build\\C_Board_Standard_Robot",
         "OutDirRoot": "build",
         "OutDirBase": "build\\C_Board_Standard_Robot",
         "ProjectName": "C_Board_Standard_Robot",
         "ConfigName": "C_Board_Standard_Robot",
-        "ProjectRoot": "c:\\Users\\14775\\Desktop\\study\\robomaster\\shoot\\MDK-ARM",
-        "ExecutableName": "c:\\Users\\14775\\Desktop\\study\\robomaster\\shoot\\MDK-ARM\\build\\C_Board_Standard_Robot\\C_Board_Standard_Robot",
+        "ProjectRoot": "c:\\Users\\wexhi\\Desktop\\study\\shoot\\MDK-ARM",
+        "ExecutableName": "c:\\Users\\wexhi\\Desktop\\study\\shoot\\MDK-ARM\\build\\C_Board_Standard_Robot\\C_Board_Standard_Robot",
         "SYS_Platform": "win32",
         "SYS_DirSep": "\\",
         "SYS_DirSeparator": "\\",
         "SYS_PathSep": ";",
         "SYS_PathSeparator": ";",
         "SYS_EOL": "\r\n",
-        "ToolchainRoot": "C:\\Keil_v5\\ARM\\ARMCC"
+        "ToolchainRoot": "c:\\Keil_v5\\ARM\\ARMCC"
     },
     "sha": {
         "c/cpp-defines": "e1b44b7efd158e17c3cc0c3ce7c5a595",
         "beforeBuildTasks": "d751713988987e9331980363e24189ce",
-        "afterBuildTasks": "4c4b8285372075c91dfa5ab1875d7723",
+        "afterBuildTasks": "cadcc2c55f4ccfc555a7dd14297adb9c",
         "global": "3ae75cac734e7a166338bea4b35ae2e0",
         "c/cpp-compiler": "3d14884587f8567240206b91bbb91847",
         "asm-compiler": "99914b932bd37a50b983c5e7c90ae93b",
-        "linker": "10960fba9701b539db276a30f3464ad9"
+        "linker": "6a3e8770c24d2b55e4ad0122f799ad48"
     }
 }
