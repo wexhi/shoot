@@ -30,7 +30,8 @@
         "../Components/Algorithm/Include",
         ".cmsis/include",
         "RTE/_C_Board_Standard_Robot",
-        ".eide/deps"
+        ".eide/deps",
+        "../User/Task"
     ],
     "libDirs": [],
     "defines": [

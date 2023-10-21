@@ -5,34 +5,44 @@
 
 extern RC_ctrl_t rc_ctrl;
 
-motor_info_t shoot_motor_info[3];        // 电机信息结构体
-fp32 speed_motor_pid[3] = {30, 0.5, 10}; // 速度环pid
-fp32 shoot_angle_pid[3] = {30, 0.5, 10}; // 角度环pid
-volatile int16_t motor_speed_target[3];
+shoot_task_t shoot_task;
 
-pid_struct_t shoot_motor_pid[3]; // 电机pid结构体
-pid_struct_t friction_pid;       // 拨盘电机pid结构体
+// 发射机构初始化
+void shoot_task_init(void)
+{
+    shoot_task.speed_motor_pid[0] = 30;  // 速度环pid->kp
+    shoot_task.speed_motor_pid[1] = 0.5; // 速度环pid->ki
+    shoot_task.speed_motor_pid[2] = 10;  // 速度环pid->kd
+    shoot_task.angle_pid[0] = 30;  // 角度环pid->kp
+    shoot_task.angle_pid[1] = 0.5; // 角度环pid->ki
+    shoot_task.angle_pid[2] = 10;  // 角度环pid->kd
+    shoot_task.angle_target = 0;         // 角度环目标值
+    shoot_task.shoot_speed_target = 0;   // 拨盘速度环目标值
+    shoot_task.fric_speed_target[0] = 0; // 摩擦轮电机目标值
+    shoot_task.fric_speed_target[1] = 0; // 摩擦轮电机目标值
+
+    pid_init(&shoot_task.shoot_angle_pid, shoot_task.angle_pid, 2.0f * PI, 2.0f * PI); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+    pid_init(&shoot_task.shoot_motor_pid, shoot_task.speed_motor_pid, 6000, 6000);          // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+    pid_init(&shoot_task.friction_pid[0], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+    pid_init(&shoot_task.friction_pid[1], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+}
 
 // 电机电流控制
 void shoot_current_give()
 {
-
-    uint8_t i = 0;
-
-    for (i = 0; i < 2; i++)
-    {
-        shoot_motor_info[i].set_current = pid_calc(&shoot_motor_pid[i], shoot_motor_info[i].rotor_speed, motor_speed_target[i]);
-    }
-    set_motor_current_can2(0, shoot_motor_info[0].set_current, shoot_motor_info[1].set_current, shoot_motor_info[2].set_current, 0);
+    shoot_task.motor_info[0].set_current = pid_calc(&shoot_task.friction_pid[0], shoot_task.motor_info[0].rotor_speed, shoot_task.fric_speed_target[0]);
+    shoot_task.motor_info[1].set_current = pid_calc(&shoot_task.friction_pid[1], shoot_task.motor_info[1].rotor_speed, shoot_task.fric_speed_target[1]);
+    shoot_task.motor_info[2].set_current = pid_calc(&shoot_task.shoot_motor_pid, shoot_task.motor_info[2].rotor_speed, shoot_task.shoot_speed_target);
+    set_motor_current_can2(0, shoot_task.motor_info[0].set_current, shoot_task.motor_info[1].set_current, shoot_task.motor_info[2].set_current, 0);
 }
 
 // 连发
 static void shoot_brust(void)
 {
     // 电机速度与遥控器通道的对应关系
-    motor_speed_target[0] = -200;
-    motor_speed_target[1] = 200;
-    motor_speed_target[2] = 200;
+    shoot_task.fric_speed_target[0] = -200;
+    shoot_task.fric_speed_target[1] = 200;
+    shoot_task.shoot_speed_target = 200;
 
     // 电机电流控制
     shoot_current_give();
@@ -42,9 +52,9 @@ static void shoot_brust(void)
 static void stop_shoot(void)
 {
     // 电机速度与遥控器通道的对应关系
-    motor_speed_target[0] = 0;
-    motor_speed_target[1] = 0;
-    motor_speed_target[2] = 0;
+    shoot_task.fric_speed_target[0] = 0;
+    shoot_task.fric_speed_target[1] = 0;
+    shoot_task.shoot_speed_target = 0;
 
     // 电机电流控制
     shoot_current_give();
@@ -54,17 +64,16 @@ static void stop_shoot(void)
 static void shoot_single(void)
 {
     // 电机速度与遥控器通道的对应关系
-    motor_speed_target[0] = 0;
-    motor_speed_target[1] = 0;
+    shoot_task.fric_speed_target[0] = -200;
+    shoot_task.fric_speed_target[1] = 200;
 }
 
+
+
+// 发射机构任务
 void Shoot_task(void const *pvParameters)
 {
-    for (uint8_t i = 0; i < 3; i++)
-    {
-        pid_init(&shoot_motor_pid[i], speed_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-    }
-    pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+    shoot_task_init();
 
     for (;;)
     {

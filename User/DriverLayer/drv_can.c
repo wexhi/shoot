@@ -4,7 +4,8 @@ extern CAN_HandleTypeDef hcan2;
  extern RC_ctrl_t rc_ctrl;
 uint16_t can_cnt_1=0;
 extern motor_info_t  motor_info_shoot[4];
-extern motor_info_t shoot_motor_info[4];
+extern shoot_task_t shoot_task;
+
 
     float powerdata[4];
 uint16_t pPowerdata[8];
@@ -77,10 +78,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)//接受中断回
    && (rx_header.StdId <  0x208))                  // 判断标识符，标识符为0x200+ID
   {
     uint8_t index = rx_header.StdId - 0x201;                  // get motor index by can_id
-     shoot_motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
-     shoot_motor_info[index].rotor_speed    = ((rx_data[2] << 8) | rx_data[3]);
-     shoot_motor_info[index].torque_current = ((rx_data[4] << 8) | rx_data[5]);
-     shoot_motor_info[index].temp           =   rx_data[6];
+     shoot_task.motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
+     shoot_task.motor_info[index].rotor_speed = ((rx_data[2] << 8) | rx_data[3]);
+     shoot_task.motor_info[index].torque_current = ((rx_data[4] << 8) | rx_data[5]);
+     shoot_task.motor_info[index].temp           =   rx_data[6];
 		if(index==0)
 		{can_cnt_1 ++;}
   }

@@ -1,580 +1,57 @@
-[2023-10-20 23:43:36]	[done]
-	build successfully !
-
-[2023-10-20 23:44:22]	[done]
-	build successfully !
-
-[2023-10-20 23:56:56]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
+[2023-10-21 14:06:03]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
 command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\AlgorithmLayer\pid.h", line 32: Error:  #20: identifier "PIDController" is undefined
-  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb)
-                     ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 65: Error:  #130: expected a "{"
-  typedef enum
-  ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 68: Error:  #20: identifier "NonMaskableInt_IRQn" is undefined
-    NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                                          */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 69: Error:  #20: identifier "MemoryManagement_IRQn" is undefined
-    MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M4 Memory Management Interrupt                           */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 70: Error:  #20: identifier "BusFault_IRQn" is undefined
-    BusFault_IRQn               = -11,    /*!< 5 Cortex-M4 Bus Fault Interrupt                                   */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 71: Error:  #20: identifier "UsageFault_IRQn" is undefined
-    UsageFault_IRQn             = -10,    /*!< 6 Cortex-M4 Usage Fault Interrupt                                 */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 72: Error:  #20: identifier "SVCall_IRQn" is undefined
-    SVCall_IRQn                 = -5,     /*!< 11 Cortex-M4 SV Call Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 73: Error:  #20: identifier "DebugMonitor_IRQn" is undefined
-    DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M4 Debug Monitor Interrupt                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 74: Error:  #20: identifier "PendSV_IRQn" is undefined
-    PendSV_IRQn                 = -2,     /*!< 14 Cortex-M4 Pend SV Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 75: Error:  #20: identifier "SysTick_IRQn" is undefined
-    SysTick_IRQn                = -1,     /*!< 15 Cortex-M4 System Tick Interrupt                                */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 77: Error:  #20: identifier "WWDG_IRQn" is undefined
-    WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                                         */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 78: Error:  #20: identifier "PVD_IRQn" is undefined
-    PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt                         */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 79: Error:  #20: identifier "TAMP_STAMP_IRQn" is undefined
-    TAMP_STAMP_IRQn             = 2,      /*!< Tamper and TimeStamp interrupts through the EXTI line             */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 80: Error:  #20: identifier "RTC_WKUP_IRQn" is undefined
-    RTC_WKUP_IRQn               = 3,      /*!< RTC Wakeup interrupt through the EXTI line                        */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 81: Error:  #20: identifier "FLASH_IRQn" is undefined
-    FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                                            */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 82: Error:  #20: identifier "RCC_IRQn" is undefined
-    RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 83: Error:  #20: identifier "EXTI0_IRQn" is undefined
-    EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 84: Error:  #20: identifier "EXTI1_IRQn" is undefined
-    EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 85: Error:  #20: identifier "EXTI2_IRQn" is undefined
-    EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 86: Error:  #20: identifier "EXTI3_IRQn" is undefined
-    EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 87: Error:  #20: identifier "EXTI4_IRQn" is undefined
-    EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                              */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 88: Error:  #20: identifier "DMA1_Stream0_IRQn" is undefined
-    DMA1_Stream0_IRQn           = 11,     /*!< DMA1 Stream 0 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 89: Error:  #20: identifier "DMA1_Stream1_IRQn" is undefined
-    DMA1_Stream1_IRQn           = 12,     /*!< DMA1 Stream 1 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 90: Error:  #20: identifier "DMA1_Stream2_IRQn" is undefined
-    DMA1_Stream2_IRQn           = 13,     /*!< DMA1 Stream 2 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 91: Error:  #20: identifier "DMA1_Stream3_IRQn" is undefined
-    DMA1_Stream3_IRQn           = 14,     /*!< DMA1 Stream 3 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 92: Error:  #20: identifier "DMA1_Stream4_IRQn" is undefined
-    DMA1_Stream4_IRQn           = 15,     /*!< DMA1 Stream 4 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 93: Error:  #20: identifier "DMA1_Stream5_IRQn" is undefined
-    DMA1_Stream5_IRQn           = 16,     /*!< DMA1 Stream 5 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 94: Error:  #20: identifier "DMA1_Stream6_IRQn" is undefined
-    DMA1_Stream6_IRQn           = 17,     /*!< DMA1 Stream 6 global Interrupt                                    */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 95: Error:  #20: identifier "ADC_IRQn" is undefined
-    ADC_IRQn                    = 18,     /*!< ADC1, ADC2 and ADC3 global Interrupts                             */
-    ^
-"../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h", line 96: Error:  #20: identifier "CAN1_TX_IRQn" is undefined
-    CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
-    ^
-.\..\User\AlgorithmLayer\pid.c: 0 warnings, 30 errors
-
-[2023-10-20 23:57:08]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\AlgorithmLayer\pid.h", line 32: Error:  #20: identifier "PIDController" is undefined
-  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb);
-                     ^
-".\..\User\AlgorithmLayer\pid.c", line 54: Error:  #20: identifier "PIDController" is undefined
-  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb)
-                     ^
-.\..\User\AlgorithmLayer\pid.c: 0 warnings, 2 errors
-
-[2023-10-21 00:00:28]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\AlgorithmLayer\pid.c", line 54: Error:  #20: identifier "PIDController" is undefined
-  fp32 dual_pid_calc(PIDController *pid, fp32 speed_fdb, fp32 angle_fdb)
-                     ^
-.\..\User\AlgorithmLayer\pid.c: 0 warnings, 1 error
-
-[2023-10-21 00:00:46]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_error[1] = pid->speed_error[0];
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_error[1] = pid->speed_error[0];
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 58: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
-      pid->speed_feedback = speed_fdb;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_setpoint"
-      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
-      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
-                                                       ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_output"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kp_speed"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                               ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                               ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Ki_speed"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                     ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_integral"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                     ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kd_speed"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                                           ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                                                            ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                                                                                  ^
-".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "speed_output"
-      if (pid->speed_output > pid->max_speed)
-               ^
-".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "max_speed"
-      if (pid->speed_output > pid->max_speed)
-                                   ^
-".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "speed_output"
-          pid->speed_output = pid->max_speed;
-               ^
-".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "max_speed"
-          pid->speed_output = pid->max_speed;
-                                   ^
-".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "speed_output"
-      else if (pid->speed_output < -pid->max_speed)
-                    ^
-".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "max_speed"
-      else if (pid->speed_output < -pid->max_speed)
-                                         ^
-".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "speed_output"
-          pid->speed_output = -pid->max_speed;
-               ^
-".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "max_speed"
-          pid->speed_output = -pid->max_speed;
-                                    ^
-".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_integral"
-      pid->speed_integral += pid->speed_error[0];
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_integral += pid->speed_error[0];
-                                  ^
-".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
-      pid->angle_error[1] = pid->angle_error[0];
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
-      pid->angle_error[1] = pid->angle_error[0];
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 79: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
-      pid->angle_feedback = angle_fdb;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_error"
-      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_setpoint"
-      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
-      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
-                                                       ^
-.\..\User\AlgorithmLayer\pid.c: 0 warnings, 30 errors
-
-[2023-10-21 00:01:27]	link failed !, exit code: 1
-   at unify_builder.Program.Main(String[] args_)
----
-Error: L6218E: Undefined symbol pid_calc (referred from Chassis_task.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
-
-
-[2023-10-21 00:04:47]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\AlgorithmLayer\pid.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\AlgorithmLayer\pid.d .\..\User\AlgorithmLayer\pid.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_error[1] = pid->speed_error[0];
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 57: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_error[1] = pid->speed_error[0];
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 58: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
-      pid->speed_feedback = speed_fdb;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_setpoint"
-      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 59: Error:  #136: struct "<unnamed>" has no field "speed_feedback"
-      pid->speed_error[0] = pid->speed_setpoint - pid->speed_feedback;
-                                                       ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_output"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kp_speed"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                               ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                               ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Ki_speed"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                     ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_integral"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                     ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "Kd_speed"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                                           ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                                                            ^
-".\..\User\AlgorithmLayer\pid.c", line 62: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_output = pid->Kp_speed * pid->speed_error[0] + pid->Ki_speed * pid->speed_integral + pid->Kd_speed * (pid->speed_error[0] - pid->speed_error[1]);
-                                                                                                                                                  ^
-".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "speed_output"
-      if (pid->speed_output > pid->max_speed)
-               ^
-".\..\User\AlgorithmLayer\pid.c", line 65: Error:  #136: struct "<unnamed>" has no field "max_speed"
-      if (pid->speed_output > pid->max_speed)
-                                   ^
-".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "speed_output"
-          pid->speed_output = pid->max_speed;
-               ^
-".\..\User\AlgorithmLayer\pid.c", line 67: Error:  #136: struct "<unnamed>" has no field "max_speed"
-          pid->speed_output = pid->max_speed;
-                                   ^
-".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "speed_output"
-      else if (pid->speed_output < -pid->max_speed)
-                    ^
-".\..\User\AlgorithmLayer\pid.c", line 69: Error:  #136: struct "<unnamed>" has no field "max_speed"
-      else if (pid->speed_output < -pid->max_speed)
-                                         ^
-".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "speed_output"
-          pid->speed_output = -pid->max_speed;
-               ^
-".\..\User\AlgorithmLayer\pid.c", line 71: Error:  #136: struct "<unnamed>" has no field "max_speed"
-          pid->speed_output = -pid->max_speed;
-                                    ^
-".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_integral"
-      pid->speed_integral += pid->speed_error[0];
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 75: Error:  #136: struct "<unnamed>" has no field "speed_error"
-      pid->speed_integral += pid->speed_error[0];
-                                  ^
-".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
-      pid->angle_error[1] = pid->angle_error[0];
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 78: Error:  #136: struct "<unnamed>" has no field "angle_error"
-      pid->angle_error[1] = pid->angle_error[0];
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 79: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
-      pid->angle_feedback = angle_fdb;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_error"
-      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
-           ^
-".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_setpoint"
-      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
-                                 ^
-".\..\User\AlgorithmLayer\pid.c", line 80: Error:  #136: struct "<unnamed>" has no field "angle_feedback"
-      pid->angle_error[0] = pid->angle_setpoint - pid->angle_feedback;
-                                                       ^
-.\..\User\AlgorithmLayer\pid.c: 0 warnings, 30 errors
-
-[2023-10-21 00:04:58]	[done]
-	build successfully !
-
-[2023-10-21 00:07:21]	[done]
-	build successfully !
-
-[2023-10-21 00:10:09]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\Task\Chassis_task.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.d .\..\User\Task\Chassis_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\Chassis_task.c", line 14: Error:  #65: expected a ";"
-  pid_struct_t supercap_pid;
-  ^
-".\..\User\Task\Chassis_task.c", line 15: Error:  #147: declaration is incompatible with "int16_t target_angle" (declared at line 110 of "../Inc/main.h")
-  uint16_t target_angle = 0;
-           ^
-".\..\User\Task\Chassis_task.c", line 50: Error:  #20: identifier "supercap_pid" is undefined
-    pid_init(&supercap_pid, superpid, 3000, 3000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-              ^
-.\..\User\Task\Chassis_task.c: 0 warnings, 3 errors
-
-[2023-10-21 00:10:38]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\Task\Chassis_task.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.d .\..\User\Task\Chassis_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\Chassis_task.c", line 14: Error:  #65: expected a ";"
-  pid_struct_t supercap_pid;
-  ^
-".\..\User\Task\Chassis_task.c", line 15: Error:  #147: declaration is incompatible with "int16_t target_angle" (declared at line 110 of "../Inc/main.h")
-  uint16_t target_angle = 0;
-           ^
-.\..\User\Task\Chassis_task.c: 0 warnings, 2 errors
-
-[2023-10-21 00:10:51]	compilation failed at : "c:\Users\14775\Desktop\study\robomaster\shoot\User\Task\Chassis_task.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\Chassis_task.d .\..\User\Task\Chassis_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\Chassis_task.c", line 15: Error:  #147: declaration is incompatible with "int16_t target_angle" (declared at line 110 of "../Inc/main.h")
-  uint16_t target_angle = 0;
-           ^
-.\..\User\Task\Chassis_task.c: 0 warnings, 1 error
-
-[2023-10-21 00:11:28]	link failed !, exit code: 1
-   at unify_builder.Program.Main(String[] args_)
----
-Error: L6200E: Symbol target_angle multiply defined (by Chassis_task.o and main.o).
-Not enough information to list image symbols.
-Not enough information to list the image map.
-Finished: 2 information, 0 warning and 1 error messages.
-
-
-[2023-10-21 00:12:09]	[done]
-	build successfully !
-
-[2023-10-21 00:12:19]	[done]
-	build successfully !
-
-[2023-10-21 00:12:36]	[done]
-	build successfully !
-
-[2023-10-21 00:14:35]	[done]
-	build successfully !
-
-[2023-10-21 00:15:32]	[done]
-	build successfully !
-
-[2023-10-21 00:17:51]	[done]
-	build successfully !
-
-[2023-10-21 00:25:13]	[done]
-	build successfully !
-
-[2023-10-21 11:56:02]	[done]
-	build successfully !
-
-[2023-10-21 11:58:08]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 9: Error:  #20: identifier "motor_speed_target" is undefined
-      motor_speed_target[0] = -200;
-      ^
-".\..\User\Task\shoot_task.c", line 21: Error:  #20: identifier "motor_speed_target" is undefined
-      motor_speed_target[0] = 0;
-      ^
-".\..\User\Task\shoot_task.c", line 32: Error:  #20: identifier "motor_speed_target" is undefined
-      motor_speed_target[0] = 0;
-      ^
-".\..\User\Task\shoot_task.c", line 34: Error:  #20: identifier "targetAngle" is undefined
-      targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-      ^
-".\..\User\Task\shoot_task.c", line 34: Error:  #20: identifier "motor_info_shoot" is undefined
-      targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 10 errors
-
-[2023-10-21 11:59:33]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 11: Error:  #20: identifier "motor_speed_target" is undefined
-      motor_speed_target[0] = -200;
-      ^
-".\..\User\Task\shoot_task.c", line 23: Error:  #20: identifier "motor_speed_target" is undefined
-      motor_speed_target[0] = 0;
-      ^
-".\..\User\Task\shoot_task.c", line 34: Error:  #20: identifier "motor_speed_target" is undefined
-      motor_speed_target[0] = 0;
-      ^
-".\..\User\Task\shoot_task.c", line 36: Error:  #20: identifier "targetAngle" is undefined
-      targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-      ^
-".\..\User\Task\shoot_task.c", line 36: Error:  #20: identifier "motor_info_shoot" is undefined
-      targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-                    ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 49: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 49: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 53: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 10 errors
-
-[2023-10-21 12:00:09]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 38: Error:  #20: identifier "targetAngle" is undefined
-      targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-      ^
-".\..\User\Task\shoot_task.c", line 38: Error:  #20: identifier "motor_info_shoot" is undefined
-      targetAngle = motor_info_shoot[2].rotor_angle - 1000;
-                    ^
-".\..\User\Task\shoot_task.c", line 49: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 49: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 55: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 7 errors
-
-[2023-10-21 12:02:30]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.h", line 18: Error:  #256: invalid redeclaration of type name "motor_info_t" (declared at line 16 of "../Inc/chassis_task.h")
-  } motor_info_t;
-    ^
-".\..\User\Task\shoot_task.h", line 22: Error:  #101: "CHAS_LF" has already been declared in the current scope
-      CHAS_LF,
-      ^
-".\..\User\Task\shoot_task.h", line 23: Error:  #101: "CHAS_RF" has already been declared in the current scope
-      CHAS_RF,
-      ^
-".\..\User\Task\shoot_task.h", line 24: Error:  #101: "CHAS_RB" has already been declared in the current scope
-      CHAS_RB,
-      ^
-".\..\User\Task\shoot_task.h", line 25: Error:  #101: "CHAS_LB" has already been declared in the current scope
-      CHAS_LB,
-      ^
-".\..\User\Task\shoot_task.h", line 26: Error:  #256: invalid redeclaration of type name "chassis_motor_cnt_t" (declared at line 24 of "../Inc/chassis_task.h")
-  } chassis_motor_cnt_t;
-    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 11 errors
-
-[2023-10-21 12:03:07]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.h", line 18: Error:  #256: invalid redeclaration of type name "motor_info_t" (declared at line 16 of "../Inc/chassis_task.h")
-  } motor_info_t;
-    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 6 errors
-
-[2023-10-21 12:04:21]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\Src\freertos.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\Src\freertos.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\Src\freertos.d .\..\Src\freertos.c
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
    at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.h", line 5: Error:  #5: cannot open source input file "shoot_task.h": No such file or directory
+  #include "shoot_task.h"
+                         ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:08:02]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.h", line 5: Error:  #5: cannot open source input file "shoot_task.h": No such file or directory
+  #include "shoot_task.h"
+                         ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:10:08]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.h", line 5: Error:  #5: cannot open source input file "shoot_task.h": No such file or directory
+  #include "shoot_task.h"
+                         ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:11:19]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.h", line 5: Error:  #5: cannot open source input file "shoot_task.h": No such file or directory
+  #include "shoot_task.h"
+                         ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:13:02]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.h", line 5: Error:  #5: cannot open source input file "shoot_task.h": No such file or directory
+  #include "shoot_task.h"
+                         ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:13:23]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
    at unify_builder.Program.Main(String[] args_)
 ---
 ".\..\User\DriverLayer\drv_can.c", line 2: Error:  #20: identifier "CAN_HandleTypeDef" is undefined
@@ -586,440 +63,317 @@ command:
 ".\..\User\DriverLayer\drv_can.c", line 4: Error:  #20: identifier "RC_ctrl_t" is undefined
    extern RC_ctrl_t rc_ctrl;
           ^
-".\..\User\DriverLayer\drv_can.c", line 6: Error:  #20: identifier "motor_info_t" is undefined
-  extern motor_info_t  motor_info_shoot[4];
+".\..\User\DriverLayer\drv_can.c", line 7: Error:  #20: identifier "shoot_task_t" is undefined
+  extern shoot_task_t shoot_task;
          ^
-".\..\User\DriverLayer\drv_can.c", line 16: Error:  #20: identifier "CAN_FilterTypeDef" is undefined
+".\..\User\DriverLayer\drv_can.c", line 18: Error:  #20: identifier "CAN_FilterTypeDef" is undefined
       CAN_FilterTypeDef  can_filter;
       ^
-".\..\User\DriverLayer\drv_can.c", line 19: Error:  #20: identifier "CAN_FILTERMODE_IDMASK" is undefined
+".\..\User\DriverLayer\drv_can.c", line 21: Error:  #20: identifier "CAN_FILTERMODE_IDMASK" is undefined
       can_filter.FilterMode =  CAN_FILTERMODE_IDMASK;  // æ ?è¯?ç¬?å±?è”?ä½?æ¨?å¼?
                                ^
-".\..\User\DriverLayer\drv_can.c", line 20: Error:  #20: identifier "CAN_FILTERSCALE_32BIT" is undefined
+".\..\User\DriverLayer\drv_can.c", line 22: Error:  #20: identifier "CAN_FILTERSCALE_32BIT" is undefined
       can_filter.FilterScale = CAN_FILTERSCALE_32BIT;		//è¿?æ»?å™?ä½?å®?ä¸?å?ä¸?32ä½?
                                ^
-".\..\User\DriverLayer\drv_can.c", line 25: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
+".\..\User\DriverLayer\drv_can.c", line 27: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
       can_filter.FilterFIFOAssignment = CAN_RX_FIFO0; // assign to fifo0ï¼?æŽ?æ”?å™?æ˜?FIFO0
                                         ^
-".\..\User\DriverLayer\drv_can.c", line 26: Error:  #20: identifier "ENABLE" is undefined
+".\..\User\DriverLayer\drv_can.c", line 28: Error:  #20: identifier "ENABLE" is undefined
       can_filter.FilterActivation = ENABLE;           // enable can filter
                                     ^
-".\..\User\DriverLayer\drv_can.c", line 29: Warning:  #223-D: function "HAL_CAN_ConfigFilter" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 31: Warning:  #223-D: function "HAL_CAN_ConfigFilter" declared implicitly
       HAL_CAN_ConfigFilter(&hcan1, &can_filter);        // init can filter
       ^
-".\..\User\DriverLayer\drv_can.c", line 30: Warning:  #223-D: function "HAL_CAN_ActivateNotification" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 32: Warning:  #223-D: function "HAL_CAN_ActivateNotification" declared implicitly
       HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);		//ä½?èƒ?cançš?FIFO0ä¸?æ–?
       ^
-".\..\User\DriverLayer\drv_can.c", line 30: Error:  #20: identifier "CAN_IT_RX_FIFO0_MSG_PENDING" is undefined
+".\..\User\DriverLayer\drv_can.c", line 32: Error:  #20: identifier "CAN_IT_RX_FIFO0_MSG_PENDING" is undefined
       HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);		//ä½?èƒ?cançš?FIFO0ä¸?æ–?
                                           ^
-".\..\User\DriverLayer\drv_can.c", line 31: Warning:  #223-D: function "HAL_CAN_Start" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 33: Warning:  #223-D: function "HAL_CAN_Start" declared implicitly
       HAL_CAN_Start(&hcan1);//å?åŠ?can1
       ^
-".\..\User\DriverLayer\drv_can.c", line 37: Error:  #20: identifier "CAN_FilterTypeDef" is undefined
+".\..\User\DriverLayer\drv_can.c", line 39: Error:  #20: identifier "CAN_FilterTypeDef" is undefined
       CAN_FilterTypeDef  can_filter;
       ^
-".\..\User\DriverLayer\drv_can.c", line 40: Error:  #20: identifier "CAN_FILTERMODE_IDMASK" is undefined
+".\..\User\DriverLayer\drv_can.c", line 42: Error:  #20: identifier "CAN_FILTERMODE_IDMASK" is undefined
       can_filter.FilterMode =  CAN_FILTERMODE_IDMASK;  // æ ?è¯?ç¬?å±?è”?ä½?æ¨?å¼?
                                ^
-".\..\User\DriverLayer\drv_can.c", line 41: Error:  #20: identifier "CAN_FILTERSCALE_32BIT" is undefined
+".\..\User\DriverLayer\drv_can.c", line 43: Error:  #20: identifier "CAN_FILTERSCALE_32BIT" is undefined
       can_filter.FilterScale = CAN_FILTERSCALE_32BIT;		//è¿?æ»?å™?ä½?å®?ä¸?å?ä¸?32ä½?
                                ^
-".\..\User\DriverLayer\drv_can.c", line 46: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
+".\..\User\DriverLayer\drv_can.c", line 48: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
       can_filter.FilterFIFOAssignment = CAN_RX_FIFO0; // assign to fifo0ï¼?æŽ?æ”?å™?æ˜?FIFO0
                                         ^
-".\..\User\DriverLayer\drv_can.c", line 47: Error:  #20: identifier "ENABLE" is undefined
+".\..\User\DriverLayer\drv_can.c", line 49: Error:  #20: identifier "ENABLE" is undefined
       can_filter.FilterActivation = ENABLE;           // enable can filter
                                     ^
-".\..\User\DriverLayer\drv_can.c", line 50: Warning:  #223-D: function "HAL_CAN_ConfigFilter" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 52: Warning:  #223-D: function "HAL_CAN_ConfigFilter" declared implicitly
       HAL_CAN_ConfigFilter(&hcan2, &can_filter);        // init can filter
       ^
-".\..\User\DriverLayer\drv_can.c", line 51: Warning:  #223-D: function "HAL_CAN_ActivateNotification" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 53: Warning:  #223-D: function "HAL_CAN_ActivateNotification" declared implicitly
      	HAL_CAN_ActivateNotification(&hcan2,CAN_IT_RX_FIFO0_MSG_PENDING);
      	^
-".\..\User\DriverLayer\drv_can.c", line 51: Error:  #20: identifier "CAN_IT_RX_FIFO0_MSG_PENDING" is undefined
+".\..\User\DriverLayer\drv_can.c", line 53: Error:  #20: identifier "CAN_IT_RX_FIFO0_MSG_PENDING" is undefined
      	HAL_CAN_ActivateNotification(&hcan2,CAN_IT_RX_FIFO0_MSG_PENDING);
      	                                    ^
-".\..\User\DriverLayer\drv_can.c", line 52: Warning:  #223-D: function "HAL_CAN_Start" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 54: Warning:  #223-D: function "HAL_CAN_Start" declared implicitly
   	  HAL_CAN_Start(&hcan2);//å?åŠ?can2
   	  ^
-".\..\User\DriverLayer\drv_can.c", line 56: Error:  #20: identifier "CAN_HandleTypeDef" is undefined
+".\..\User\DriverLayer\drv_can.c", line 58: Error:  #20: identifier "CAN_HandleTypeDef" is undefined
   void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)//æŽ?å?ä¸?æ–?å›?è°?å‡?æ•?
                                          ^
-".\..\User\DriverLayer\drv_can.c", line 58: Error:  #20: identifier "CAN_RxHeaderTypeDef" is undefined
+".\..\User\DriverLayer\drv_can.c", line 60: Error:  #20: identifier "CAN_RxHeaderTypeDef" is undefined
     CAN_RxHeaderTypeDef rx_header;
     ^
-".\..\User\DriverLayer\drv_can.c", line 60: Error:  #20: identifier "CAN1" is undefined
+".\..\User\DriverLayer\drv_can.c", line 62: Error:  #20: identifier "CAN1" is undefined
     if(hcan->Instance == CAN1)
                          ^
-".\..\User\DriverLayer\drv_can.c", line 63: Warning:  #223-D: function "HAL_CAN_GetRxMessage" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 65: Warning:  #223-D: function "HAL_CAN_GetRxMessage" declared implicitly
   		HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); //receive can1 data
   		^
-".\..\User\DriverLayer\drv_can.c", line 63: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
+".\..\User\DriverLayer\drv_can.c", line 65: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
   		HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); //receive can1 data
   		                           ^
-".\..\User\DriverLayer\drv_can.c", line 72: Error:  #20: identifier "CAN2" is undefined
+".\..\User\DriverLayer\drv_can.c", line 74: Error:  #20: identifier "CAN2" is undefined
   	 if(hcan->Instance == CAN2)
   	                      ^
-".\..\User\DriverLayer\drv_can.c", line 74: Warning:  #223-D: function "HAL_CAN_GetRxMessage" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 76: Warning:  #223-D: function "HAL_CAN_GetRxMessage" declared implicitly
       HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); //receive can2 data
       ^
-".\..\User\DriverLayer\drv_can.c", line 74: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
+".\..\User\DriverLayer\drv_can.c", line 76: Error:  #20: identifier "CAN_RX_FIFO0" is undefined
       HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); //receive can2 data
                                  ^
-".\..\User\DriverLayer\drv_can.c", line 106: Error:  #20: identifier "CAN_TxHeaderTypeDef" is undefined
+".\..\User\DriverLayer\drv_can.c", line 81: Error:  #20: identifier "shoot_motor_info" is undefined
+       shoot_motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
+       ^
+".\..\User\DriverLayer\drv_can.c", line 108: Error:  #20: identifier "CAN_TxHeaderTypeDef" is undefined
     CAN_TxHeaderTypeDef tx_header;
     ^
-".\..\User\DriverLayer\drv_can.c", line 109: Error:  #20: identifier "CAN_ID_STD" is undefined
+".\..\User\DriverLayer\drv_can.c", line 111: Error:  #20: identifier "CAN_ID_STD" is undefined
     tx_header.IDE   = CAN_ID_STD;//æ ?å‡?å¸?
                       ^
-".\..\User\DriverLayer\drv_can.c", line 110: Error:  #20: identifier "CAN_RTR_DATA" is undefined
+".\..\User\DriverLayer\drv_can.c", line 112: Error:  #20: identifier "CAN_RTR_DATA" is undefined
     tx_header.RTR   = CAN_RTR_DATA;//æ•?æ?å¸?
                       ^
-".\..\User\DriverLayer\drv_can.c", line 113: Warning:  #223-D: function "HAL_CAN_AddTxMessage" declared implicitly
+".\..\User\DriverLayer\drv_can.c", line 115: Warning:  #223-D: function "HAL_CAN_AddTxMessage" declared implicitly
     HAL_CAN_AddTxMessage(&hcan1, &tx_header, sbus_buf,(uint32_t*)CAN_TX_MAILBOX0);
     ^
-".\..\User\DriverLayer\drv_can.c", line 113: Error:  #20: identifier "CAN_TX_MAILBOX0" is undefined
+".\..\User\DriverLayer\drv_can.c", line 115: Error:  #20: identifier "CAN_TX_MAILBOX0" is undefined
     HAL_CAN_AddTxMessage(&hcan1, &tx_header, sbus_buf,(uint32_t*)CAN_TX_MAILBOX0);
                                                                  ^
-".\..\User\DriverLayer\drv_can.c", line 118: Error:  #20: identifier "CAN_TxHeaderTypeDef" is undefined
+".\..\User\DriverLayer\drv_can.c", line 120: Error:  #20: identifier "CAN_TxHeaderTypeDef" is undefined
     CAN_TxHeaderTypeDef tx_header;
     ^
-".\..\User\DriverLayer\drv_can.c", line 122: Error:  #20: identifier "CAN_ID_STD" is undefined
+".\..\User\DriverLayer\drv_can.c", line 124: Error:  #20: identifier "CAN_ID_STD" is undefined
     tx_header.IDE   = CAN_ID_STD;//æ ?å‡?å¸?
                       ^
-".\..\User\DriverLayer\drv_can.c", line 123: Error:  #20: identifier "CAN_RTR_DATA" is undefined
+".\..\User\DriverLayer\drv_can.c", line 125: Error:  #20: identifier "CAN_RTR_DATA" is undefined
     tx_header.RTR   = CAN_RTR_DATA;//æ•?æ?å¸?
                       ^
-".\..\User\DriverLayer\drv_can.c", line 135: Warning:  #223-D: function "HAL_CAN_AddTxMessage" declared implicitly
-    HAL_CAN_AddTxMessage(&hcan2, &tx_header, tx_data,(uint32_t*)CAN_TX_MAILBOX0);
-    ^
-".\..\User\DriverLayer\drv_can.c", line 135: Error:  #20: identifier "CAN_TX_MAILBOX0" is undefined
-    HAL_CAN_AddTxMessage(&hcan2, &tx_header, tx_data,(uint32_t*)CAN_TX_MAILBOX0);
-                                                                ^
-.\..\User\DriverLayer\drv_can.c: 10 warnings, 30 errors
-".\..\Src\freertos.c", line 139: Error:  #20: identifier "Shoot_task" is undefined
-    
-sThreadDef(Shoot_task, Shoot_task, osPriorityRealtime, 0, 512); // ï¿?ï¿?ï¿?ï¿?ï¿?Æ¶ï¿?ï¿?ï¿?ï¿?ï¿?
-    ^
-".\..\Src\freertos.c", line 183: Warning:  #177-D: variable "TIM1_flag" was declared but never referenced
-  	uint8_t TIM1_flag = 1;//ï¿?ï¿?Öªï¿?ï¿?bug
-  	        ^
-.\..\Src\freertos.c: 1 warning, 1 error
+.\..\User\DriverLayer\drv_can.c: 9 warnings, 30 errors
 
-[2023-10-21 12:05:10]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.h", line 10: Error:  #81: more than one storage class may not be specified
-  extern typedef struct
-         ^
-".\..\User\Task\shoot_task.h", line 18: Error:  #101: "motor_info_t" has already been declared in the current scope
-  } motor_info_t;
-    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 7 errors
-
-[2023-10-21 12:05:40]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.h", line 18: Error:  #101: "motor_info_t" has already been declared in the current scope
-  } motor_info_t;
-    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 6 errors
-
-[2023-10-21 12:07:22]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 45: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 47: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 51: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 5 errors
-
-[2023-10-21 12:10:08]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_info_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-          ^
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_pid_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-                                                      ^
-".\..\User\Task\shoot_task.c", line 20: Error:  #20: identifier "motor_info_shoot" is undefined
-      set_motor_current_can2(0, motor_info_shoot[0].set_current, motor_info_shoot[1].set_current, motor_info_shoot[2].set_current, 0);
-                                ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 64: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 8 errors
-
-[2023-10-21 12:10:30]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 6: Error:  #147: declaration is incompatible with "moto_info_t motor_info[7]" (declared at line 82 of "../Inc/main.h")
-  moto_info_t motor_info[8]; // ç”?æœ?ä¿?æ?ç»?æž?ä½?
-              ^
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_info_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-          ^
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_pid_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-                                                      ^
-".\..\User\Task\shoot_task.c", line 20: Error:  #20: identifier "motor_info_shoot" is undefined
-      set_motor_current_can2(0, motor_info_shoot[0].set_current, motor_info_shoot[1].set_current, motor_info_shoot[2].set_current, 0);
-                                ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 64: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 9 errors
-
-[2023-10-21 12:11:34]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
-   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\DriverLayer\drv_can.c", line 6: Error:  #20: identifier "motor_info_t" is undefined
-  extern motor_info_t  motor_info_shoot[4];
-         ^
-.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
-
-[2023-10-21 12:12:22]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 6: Error:  #147: declaration is incompatible with "moto_info_t motor_info[7]" (declared at line 82 of "../Inc/main.h")
-  moto_info_t motor_info[8]; // ç”?æœ?ä¿?æ?ç»?æž?ä½?
-              ^
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_info_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-          ^
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_pid_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-                                                      ^
-".\..\User\Task\shoot_task.c", line 20: Error:  #20: identifier "motor_info_shoot" is undefined
-      set_motor_current_can2(0, motor_info_shoot[0].set_current, motor_info_shoot[1].set_current, motor_info_shoot[2].set_current, 0);
-                                ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 64: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 9 errors
-
-[2023-10-21 12:12:45]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_info_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-          ^
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_pid_shoot" is undefined
-          motor_info_shoot[i].set_current = pid_calc(&motor_pid_shoot[i], motor_info_shoot[i].rotor_speed, motor_speed_target[i]);
-                                                      ^
-".\..\User\Task\shoot_task.c", line 20: Error:  #20: identifier "motor_info_shoot" is undefined
-      set_motor_current_can2(0, motor_info_shoot[0].set_current, motor_info_shoot[1].set_current, motor_info_shoot[2].set_current, 0);
-                                ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 64: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 8 errors
-
-[2023-10-21 12:13:18]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 18: Error:  #20: identifier "motor_pid_shoot" is undefined
-          shoot_motor_info[i].set_current = pid_calc(&motor_pid_shoot[i], shoot_motor_info[i].rotor_speed, motor_speed_target[i]);
-                                                      ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "motor_pid_shoot" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                    ^
-".\..\User\Task\shoot_task.c", line 58: Error:  #20: identifier "shoot_motor_pid" is undefined
-          pid_init(&motor_pid_shoot[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 60: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 64: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 6 errors
-
-[2023-10-21 12:14:30]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 60: Error:  #167: argument of type "pid_struct_t *" is incompatible with parameter of type "fp32 *"
-          pid_init(&shoot_motor_pid[i], shoot_motor_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                                        ^
-".\..\User\Task\shoot_task.c", line 62: Error:  #20: identifier "friction_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                ^
-".\..\User\Task\shoot_task.c", line 62: Error:  #20: identifier "shoot_angle_pid" is undefined
-      pid_init(&friction_pid, shoot_angle_pid, 6000, 6000); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
-                              ^
-".\..\User\Task\shoot_task.c", line 66: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 4 errors
-
-[2023-10-21 12:17:49]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
-command: 
-  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\..\User\Task\shoot_task.c", line 68: Error:  #20: identifier "rc_ctrl" is undefined
-          if (rc_ctrl.rc.s[0] == 1)
-              ^
-.\..\User\Task\shoot_task.c: 0 warnings, 1 error
-
-[2023-10-21 12:18:21]	link failed !, exit code: 1
-   at unify_builder.Program.Main(String[] args_)
----
-Error: L6218E: Undefined symbol motor_info_shoot (referred from drv_can.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
-
-
-[2023-10-21 12:19:14]	link failed !, exit code: 1
-   at unify_builder.Program.Main(String[] args_)
----
-Error: L6218E: Undefined symbol motor_info_shoot (referred from drv_can.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
-
-
-[2023-10-21 12:22:12]	link failed !, exit code: 1
-   at unify_builder.Program.Main(String[] args_)
----
-Error: L6218E: Undefined symbol motor_info_shoot (referred from drv_can.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
-
-
-[2023-10-21 12:23:13]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+[2023-10-21 14:14:04]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
 command: 
   "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
    at unify_builder.Program.Main(String[] args_)
 ---
-".\..\User\DriverLayer\drv_can.c", line 79: Error:  #20: identifier "motor_info_shoot" is undefined
-       motor_info_shoot[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
+".\..\User\DriverLayer\drv_can.c", line 7: Error:  #20: identifier "shoot_task_t" is undefined
+  extern shoot_task_t shoot_task;
+         ^
+".\..\User\DriverLayer\drv_can.c", line 81: Error:  #20: identifier "shoot_motor_info" is undefined
+       shoot_motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
+       ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 2 errors
+
+[2023-10-21 14:15:30]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.c", line 81: Error:  #20: identifier "shoot_motor_info" is undefined
+       shoot_motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
        ^
 .\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
 
-[2023-10-21 12:26:35]	[done]
+[2023-10-21 14:15:40]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\DriverLayer\drv_can.c", line 81: Error:  #20: identifier "shoot_motor_info" is undefined
+       shoot_motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
+       ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:17:18]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 32: Error:  #136: struct "<unnamed>" has no field "fric_motor_info"
+      shoot_task.fric_motor_info[0].set_current = pid_calc(&shoot_task.friction_pid[0], shoot_task.motor_info[0].rotor_speed, shoot_task.fric_speed_target[0]);
+                 ^
+".\..\User\Task\shoot_task.c", line 33: Error:  #136: struct "<unnamed>" has no field "fric_motor_info"
+      shoot_task.fric_motor_info[1].set_current = pid_calc(&shoot_task.friction_pid[1], shoot_task.motor_info[1].rotor_speed, shoot_task.fric_speed_target[1]);
+                 ^
+".\..\User\Task\shoot_task.c", line 34: Error:  #136: struct "<unnamed>" has no field "shoot_motor_info"
+      shoot_task.shoot_motor_info.set_current = pid_calc(&shoot_task.shoot_motor_pid, shoot_task.motor_info[2].rotor_speed, shoot_task.shoot_speed_target);
+                 ^
+".\..\User\Task\shoot_task.c", line 35: Error:  #154: expression must have struct or union type
+      set_motor_current_can2(0, shoot_task.motor_info[0].set_current, shoot_task.motor_info[1].set_current, shoot_task.motor_info.set_current, 0);
+                                                                                                            ^
+.\..\User\Task\shoot_task.c: 0 warnings, 4 errors
+
+[2023-10-21 14:18:04]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 34: Error:  #154: expression must have struct or union type
+      shoot_task.motor_info.set_current = pid_calc(&shoot_task.shoot_motor_pid, shoot_task.motor_info[2].rotor_speed, shoot_task.shoot_speed_target);
+      ^
+".\..\User\Task\shoot_task.c", line 35: Error:  #154: expression must have struct or union type
+      set_motor_current_can2(0, shoot_task.motor_info[0].set_current, shoot_task.motor_info[1].set_current, shoot_task.motor_info.set_current, 0);
+                                                                                                            ^
+.\..\User\Task\shoot_task.c: 0 warnings, 2 errors
+
+[2023-10-21 14:18:29]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 35: Error:  #154: expression must have struct or union type
+      set_motor_current_can2(0, shoot_task.motor_info[0].set_current, shoot_task.motor_info[1].set_current, shoot_task.motor_info.set_current, 0);
+                                                                                                            ^
+.\..\User\Task\shoot_task.c: 0 warnings, 1 error
+
+[2023-10-21 14:18:53]	[done]
 	build successfully !
 
-[2023-10-21 12:27:48]	[done]
+[2023-10-21 14:25:16]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 26: Error:  #20: identifier "M_PI" is undefined
+      pid_init(&shoot_task.shoot_motor_pid, shoot_task.speed_motor_pid, 2 * M_PI, 2); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                                                            ^
+.\..\User\Task\shoot_task.c: 0 warnings, 1 error
+
+[2023-10-21 14:25:37]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 26: Error:  #20: identifier "M_PI" is undefined
+      pid_init(&shoot_task.shoot_motor_pid, shoot_task.speed_motor_pid, M_PI, 2); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                                                        ^
+.\..\User\Task\shoot_task.c: 0 warnings, 1 error
+
+[2023-10-21 14:26:58]	[done]
 	build successfully !
 
-[2023-10-21 12:28:07]	[done]
+[2023-10-21 14:28:46]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol shoot_task_init (referred from shoot_task.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2023-10-21 14:29:00]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol shoot_task_init (referred from shoot_task.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2023-10-21 14:29:19]	[done]
+	build successfully !
+
+[2023-10-21 14:29:34]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol Shoot_task (referred from freertos.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2023-10-21 14:29:45]	[done]
+	build successfully !
+
+[2023-10-21 14:31:58]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\DriverLayer\drv_can.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\DriverLayer\drv_can.d .\..\User\DriverLayer\drv_can.c
+   at unify_builder.Program.Main(String[] args_)
+---
+"../User/Task/shoot_task.h", line 23: Error:  #101: "shoot_angle_pid" has already been declared in the current scope
+      pid_struct_t shoot_angle_pid; // æ‹?ç›?è§?åº?pidç»?æž?ä½?
+                   ^
+.\..\User\DriverLayer\drv_can.c: 0 warnings, 1 error
+
+[2023-10-21 14:32:54]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 16: Error:  #142: expression must have pointer-to-object type
+      shoot_task.shoot_angle_pid[0] = 30;  // è§?åº?çŽ?pid->kp
+      ^
+".\..\User\Task\shoot_task.c", line 17: Error:  #142: expression must have pointer-to-object type
+      shoot_task.shoot_angle_pid[1] = 0.5; // è§?åº?çŽ?pid->ki
+      ^
+".\..\User\Task\shoot_task.c", line 18: Error:  #142: expression must have pointer-to-object type
+      shoot_task.shoot_angle_pid[2] = 10;  // è§?åº?çŽ?pid->kd
+      ^
+".\..\User\Task\shoot_task.c", line 24: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      pid_init(&shoot_task.shoot_angle_pid, shoot_task.shoot_angle_pid, 2.0 * 
+I, 2.0 * PI); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                                                              ^
+".\..\User\Task\shoot_task.c", line 24: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      pid_init(&shoot_task.shoot_angle_pid, shoot_task.shoot_angle_pid, 2.0 * 
+I, 2.0 * 
+I); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                                                                        ^
+".\..\User\Task\shoot_task.c", line 24: Error:  #167: argument of type "pid_struct_t" is incompatible with parameter of type "fp32 *"
+      pid_init(&shoot_task.shoot_angle_pid, shoot_task.shoot_angle_pid, 2.0 * 
+I, 2.0 * 
+I); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                            ^
+".\..\User\Task\shoot_task.c", line 25: Error:  #167: argument of type "pid_struct_t" is incompatible with parameter of type "fp32 *"
+      pid_init(&shoot_task.shoot_motor_pid, shoot_task.shoot_angle_pid, 6000, 6000);          // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                            ^
+.\..\User\Task\shoot_task.c: 2 warnings, 5 errors
+
+[2023-10-21 14:33:26]	compilation failed at : "c:\Users\wexhi\Desktop\study\shoot\User\Task\shoot_task.c", exit code: 1
+command: 
+  "c:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Application -I../Bsp -I../Components -I../Components/Algorithm -I../Components/Controller -I../Components/Devices -I../Components/Algorithm/Include -I.cmsis/include -IRTE/_C_Board_Standard_Robot -I.eide/deps -I../User/Task -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.o --no_depend_system_headers --depend .\build\C_Board_Standard_Robot\__\User\Task\shoot_task.d .\..\User\Task\shoot_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\User\Task\shoot_task.c", line 24: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      pid_init(&shoot_task.shoot_angle_pid, shoot_task.shoot_angle_pid, 2.0 * 
+I, 2.0 * PI); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                                                              ^
+".\..\User\Task\shoot_task.c", line 24: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      pid_init(&shoot_task.shoot_angle_pid, shoot_task.shoot_angle_pid, 2.0 * 
+I, 2.0 * 
+I); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                                                                        ^
+".\..\User\Task\shoot_task.c", line 24: Error:  #167: argument of type "pid_struct_t" is incompatible with parameter of type "fp32 *"
+      pid_init(&shoot_task.shoot_angle_pid, shoot_task.shoot_angle_pid, 2.0 * 
+I, 2.0 * 
+I); // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                            ^
+".\..\User\Task\shoot_task.c", line 25: Error:  #167: argument of type "pid_struct_t" is incompatible with parameter of type "fp32 *"
+      pid_init(&shoot_task.shoot_motor_pid, shoot_task.shoot_angle_pid, 6000, 6000);          // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+                                            ^
+.\..\User\Task\shoot_task.c: 2 warnings, 2 errors
+
+[2023-10-21 14:34:37]	[done]
+	build successfully !
+
+[2023-10-21 14:35:17]	[done]
 	build successfully !
 

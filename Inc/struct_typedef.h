@@ -15,6 +15,7 @@ typedef unsigned char bool_t;
 typedef float fp32;
 typedef double fp64;
 
+// 电机信息结构体
 typedef struct
 {
     uint16_t can_id;        // ID号
@@ -24,5 +25,7 @@ typedef struct
     int16_t torque_current; // 实际转矩电流
     uint8_t temp;           // 电机温度
 } motor_info_t;
+
+
 
 #endif
