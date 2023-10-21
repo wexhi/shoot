@@ -24,8 +24,7 @@ typedef struct
     int16_t rotor_speed;    // 现在的转速
     int16_t torque_current; // 实际转矩电流
     uint8_t temp;           // 电机温度
+    fp32 real_angle;        // 实际角度
 } motor_info_t;
-
-
 
 #endif

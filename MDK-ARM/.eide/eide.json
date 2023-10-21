@@ -295,8 +295,8 @@
   "targets": {
     "C_Board_Standard_Robot": {
       "excludeList": [
-        "<virtual_root>/RTOS TASK/Chassis_task.c",
-        "<virtual_root>/RTOS TASK/UI_task.c"
+        "<virtual_root>/RTOS TASK/UI_task.c",
+        "<virtual_root>/RTOS TASK/Chassis_task.c"
       ],
       "toolchain": "AC5",
       "compileConfig": {
