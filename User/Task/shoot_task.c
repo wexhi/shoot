@@ -66,6 +66,13 @@ static void shoot_single(void)
     // 电机速度与遥控器通道的对应关系
     shoot_task.fric_speed_target[0] = -200;
     shoot_task.fric_speed_target[1] = 200;
+    
+    pid_calc(&shoot_task.shoot_angle_pid, shoot_task.motor_info[2].rotor_angle, shoot_task.angle_target);
+
+    shoot_task.motor_info[0].set_current = pid_calc(&shoot_task.friction_pid[0], shoot_task.motor_info[0].rotor_speed, shoot_task.fric_speed_target[0]);
+    shoot_task.motor_info[1].set_current = pid_calc(&shoot_task.friction_pid[1], shoot_task.motor_info[1].rotor_speed, shoot_task.fric_speed_target[1]);
+    shoot_task.motor_info[2].set_current = pid_calc(&shoot_task.shoot_motor_pid, shoot_task.motor_info[2].rotor_speed, shoot_task.shoot_angle_pid.out);
+    set_motor_current_can2(0, shoot_task.motor_info[0].set_current, shoot_task.motor_info[1].set_current, shoot_task.motor_info[2].set_current, 0);
 }
 
 
