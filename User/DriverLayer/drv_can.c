@@ -65,40 +65,42 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) // 接受中断�
     }
   }
   // 电机信息接收 M3508
-  //   if(hcan->Instance == CAN2)
-  //  {		uint8_t             rx_data[8];
-  //    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); //receive can2 data
-  //  	if ((rx_header.StdId >= 0x201)//201-207
-  //   && (rx_header.StdId <  0x208))                  // 判断标识符，标识符为0x200+ID
-  //  {
-  //    uint8_t index = rx_header.StdId - 0x201;                  // get motor index by can_id
-  //     shoot_task.motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
-  //     shoot_task.motor_info[index].rotor_speed = ((rx_data[2] << 8) | rx_data[3]);
-  //     shoot_task.motor_info[index].torque_current = ((rx_data[4] << 8) | rx_data[5]);
-  //     shoot_task.motor_info[index].temp           =   rx_data[6];
-  //  	if(index==0)
-  //  	{can_cnt_1 ++;}
-  //  }
-
-  // GM6020
-  if (hcan->Instance == CAN2)
-  {
-    uint8_t rx_data[8];
-    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); // receive can2 data
-    if ((rx_header.StdId >= 0x205)                                 // 201-207
-        && (rx_header.StdId < 0x20C))                              // 判断标识符，标识符为0x200+ID
-    {
-      uint8_t index = rx_header.StdId - 0x205; // get motor index by can_id
-      shoot_task.motor_info[index].rotor_angle = ((rx_data[0] << 8) | rx_data[1]);
+    if(hcan->Instance == CAN2)
+   {		uint8_t             rx_data[8];
+     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); //receive can2 data
+   	if ((rx_header.StdId >= 0x201)//201-207
+    && (rx_header.StdId <  0x208))                  // 判断标识符，标识符为0x200+ID
+   {
+     uint8_t index = rx_header.StdId - 0x201;                  // get motor index by can_id
+      shoot_task.motor_info[index].rotor_angle    = ((rx_data[0] << 8) | rx_data[1]);
       shoot_task.motor_info[index].rotor_speed = ((rx_data[2] << 8) | rx_data[3]);
       shoot_task.motor_info[index].torque_current = ((rx_data[4] << 8) | rx_data[5]);
-      shoot_task.motor_info[index].temp = rx_data[6];
+      shoot_task.motor_info[index].temp           =   rx_data[6];
       shoot_task.motor_info[index].real_angle = shoot_task.motor_info[index].rotor_angle * 360.f / 8192.f;
       if (index == 0)
       {
-        can_cnt_1++;
-      }
-    }
+        can_cnt_1++;}
+   }
+
+  // GM6020
+  // if (hcan->Instance == CAN2)
+  // {
+  //   uint8_t rx_data[8];
+  //   HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data); // receive can2 data
+  //   if ((rx_header.StdId >= 0x205)                                 // 201-207
+  //       && (rx_header.StdId < 0x20C))                              // 判断标识符，标识符为0x200+ID
+  //   {
+  //     uint8_t index = rx_header.StdId - 0x205; // get motor index by can_id
+  //     shoot_task.motor_info[index].rotor_angle = ((rx_data[0] << 8) | rx_data[1]);
+  //     shoot_task.motor_info[index].rotor_speed = ((rx_data[2] << 8) | rx_data[3]);
+  //     shoot_task.motor_info[index].torque_current = ((rx_data[4] << 8) | rx_data[5]);
+  //     shoot_task.motor_info[index].temp = rx_data[6];
+  //     shoot_task.motor_info[index].real_angle = shoot_task.motor_info[index].rotor_angle * 360.f / 8192.f;
+  //     if (index == 0)
+  //     {
+  //       can_cnt_1++;
+  //     }
+  //   }
 
     if (rx_header.StdId == 0x211)
     {
