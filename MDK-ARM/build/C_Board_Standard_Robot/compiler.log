@@ -1,9 +1,6 @@
 >>> cc
 
-".\..\Src\freertos.c", line 182: Warning:  #177-D: variable "TIM1_flag" was declared but never referenced
-  	uint8_t TIM1_flag = 1;//ï¿?ï¿?Öªï¿?ï¿?bug
-  	        ^
-.\..\Src\freertos.c: 1 warning, 0 errors
+
 
 >>> ld
 
