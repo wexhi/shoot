@@ -80,6 +80,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) // 接受中断�
       if (index == 0)
       {
         can_cnt_1++;}
+      motor_angle_judge(2);
    }
 
   // GM6020

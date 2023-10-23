@@ -60,7 +60,6 @@
 .\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Components/Devices/BMI088driver.h
 .\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Components/Algorithm/QuaternionEKF.h
 .\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Components/kalman_filter.h
-.\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Inc/exchange.h
 .\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Inc/super_cap.h
 .\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Inc/UI_task.h
 .\build\C_Board_Standard_Robot\__\Src\freertos.o: ../Inc/stm32f4xx_it.h

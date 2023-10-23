@@ -7,7 +7,6 @@
 extern RC_ctrl_t rc_ctrl;
 
 uint8_t shoot_flag = 0;
-uint8_t loop_count = 0;
 
 shoot_task_t shoot_task;
 
@@ -30,46 +29,48 @@ void shoot_task_init(void)
     pid_init(&shoot_task.friction_pid[0], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
     pid_init(&shoot_task.friction_pid[1], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
 
-    motor_angle_judge(2);
+    // motor_angle_judge(2);
 }
 
 // 角度判断
 void motor_angle_judge(uint8_t motor_index)
 {
-    shoot_task.motor_info[motor_index].angle_error = shoot_task.motor_info[motor_index].rotor_angle - \
-                                                        shoot_task.motor_info[motor_index].angle_old_err;
+    shoot_task.motor_info[motor_index].angle_error = shoot_task.motor_info[motor_index].rotor_angle -
+                                                     shoot_task.motor_info[motor_index].angle_old_err;
 
     if (shoot_task.motor_info->rotor_speed > 0)
     {
-        if (abs(loop_count) < 18) // 没有转满一圈
+        if (abs(shoot_task.motor_info[motor_index].loop_count) < 36) // 没有转满一圈
         {
-            if (shoot_task.motor_info[motor_index].angle_error < -100) // 转了一圈
+            if (abs(shoot_task.motor_info[motor_index].angle_error) > 1000) // 转了一圈
             {
-                loop_count++;
+                shoot_task.motor_info[motor_index].loop_count++;
             }
         }
         else
         {
-            loop_count = 0;
+            shoot_task.motor_info[motor_index].loop_count = 0;
         }
     }
     else if (shoot_task.motor_info->rotor_speed < 0)
     {
-        if (abs(loop_count) < 18)
+        if (abs(shoot_task.motor_info[motor_index].loop_count) < 36)
         {
-            if (shoot_task.motor_info[motor_index].angle_error > 100)
+            if (abs(shoot_task.motor_info[motor_index].angle_error) > 1000)
             {
-                loop_count--;
+                shoot_task.motor_info[motor_index].loop_count--;
             }
         }
         else
         {
-            loop_count = 0;
+            shoot_task.motor_info[motor_index].loop_count = 0;
         }
     }
 
-    shoot_task.motor_info[motor_index].out_angle = shoot_task.motor_info[motor_index].rotor_angle + loop_count * 8191;
-    shoot_task.motor_info[motor_index].out_real_angle = shoot_task.motor_info[motor_index].out_angle * 360 / (8191 * 18.00f);
+    shoot_task.motor_info[motor_index].out_angle = shoot_task.motor_info[motor_index].rotor_angle +
+                                                   abs(shoot_task.motor_info[motor_index].loop_count) * 8191;
+    shoot_task.motor_info[motor_index].out_real_angle = shoot_task.motor_info[motor_index].out_angle *
+                                                        360 / (8191 * 36.00f);
 
     shoot_task.motor_info[motor_index].angle_old_err = shoot_task.motor_info[motor_index].rotor_angle;
 }
@@ -86,10 +87,9 @@ void shoot_current_give()
 // 连发
 static void shoot_brust(void)
 {
-    // 电机速度与遥控器通道的对应关系
     shoot_task.fric_speed_target[0] = -200;
     shoot_task.fric_speed_target[1] = 200;
-    shoot_task.shoot_speed_target = 200;
+    shoot_task.shoot_speed_target = 800;
 
     // 电机电流控制
     shoot_current_give();
@@ -99,8 +99,7 @@ static void shoot_brust(void)
 static void stop_shoot(void)
 {
     // 电机速度与遥控器通道的对应关系
-    shoot_task.fric_speed_target[0] = 0;
-    shoot_task.fric_speed_target[1] = 0;
+    shoot_task.fric_speed_target[0] = 0;    shoot_task.fric_speed_target[1] = 0;
     shoot_task.shoot_speed_target = 0;
 
     // 电机电流控制
@@ -127,7 +126,7 @@ static void shoot_single(void)
 void Shoot_task(void const *pvParameters)
 {
     shoot_task_init();
-    shoot_task.angle_target = shoot_task.motor_info[2].out_real_angle + 350;
+    shoot_task.angle_target = shoot_task.motor_info[2].out_real_angle + 45;
     if (shoot_task.angle_target > 360)
     {
         shoot_task.angle_target -= 360;
@@ -135,7 +134,6 @@ void Shoot_task(void const *pvParameters)
 
     for (;;)
     {
-        motor_angle_judge(2);
         if (rc_ctrl.rc.s[0] == 1)
         {
             LEDR_ON();
@@ -162,7 +160,7 @@ void Shoot_task(void const *pvParameters)
             LEDR_ON();
             LEDB_OFF();
             LEDG_OFF();
-            if (abs(shoot_task.angle_target - shoot_task.motor_info[2].out_real_angle) > 5)
+            if (abs(shoot_task.angle_target - shoot_task.motor_info[2].out_real_angle) > 1)
             {
                 shoot_brust();
             }

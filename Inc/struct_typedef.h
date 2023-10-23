@@ -28,7 +28,8 @@ typedef struct
     fp32 out_angle;         // 输出机械刻度角度
     fp32 out_real_angle;    // 输出实际角度
     fp32 angle_error;       // 角度误差
-    fp32 angle_old_err;      // 上次角度误差
+    fp32 angle_old_err;     // 上次角度误差
+    int8_t loop_count;     // 转圈数
 } motor_info_t;
 
 #endif
