@@ -7,7 +7,6 @@
 extern RC_ctrl_t rc_ctrl;
 
 uint8_t shoot_flag = 0;
-fp32 start_angle = 0;
 uint8_t loop_count = 0;
 
 shoot_task_t shoot_task;
@@ -30,6 +29,49 @@ void shoot_task_init(void)
     pid_init(&shoot_task.shoot_motor_pid, shoot_task.speed_motor_pid, 1500, 1500);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
     pid_init(&shoot_task.friction_pid[0], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
     pid_init(&shoot_task.friction_pid[1], shoot_task.speed_motor_pid, 6000, 6000);     // init pid parameter, kp=40, ki=3, kd=0, output limit = 16384
+
+    motor_angle_judge(2);
+}
+
+// 角度判断
+void motor_angle_judge(uint8_t motor_index)
+{
+    shoot_task.motor_info[motor_index].angle_error = shoot_task.motor_info[motor_index].rotor_angle - \
+                                                        shoot_task.motor_info[motor_index].angle_old_err;
+
+    if (shoot_task.motor_info->rotor_speed > 0)
+    {
+        if (abs(loop_count) < 18) // 没有转满一圈
+        {
+            if (shoot_task.motor_info[motor_index].angle_error < -100) // 转了一圈
+            {
+                loop_count++;
+            }
+        }
+        else
+        {
+            loop_count = 0;
+        }
+    }
+    else if (shoot_task.motor_info->rotor_speed < 0)
+    {
+        if (abs(loop_count) < 18)
+        {
+            if (shoot_task.motor_info[motor_index].angle_error > 100)
+            {
+                loop_count--;
+            }
+        }
+        else
+        {
+            loop_count = 0;
+        }
+    }
+
+    shoot_task.motor_info[motor_index].out_angle = shoot_task.motor_info[motor_index].rotor_angle + loop_count * 8191;
+    shoot_task.motor_info[motor_index].out_real_angle = shoot_task.motor_info[motor_index].out_angle * 360 / (8191 * 18.00f);
+
+    shoot_task.motor_info[motor_index].angle_old_err = shoot_task.motor_info[motor_index].rotor_angle;
 }
 
 // 电机电流控制
@@ -85,8 +127,7 @@ static void shoot_single(void)
 void Shoot_task(void const *pvParameters)
 {
     shoot_task_init();
-    start_angle = shoot_task.motor_info[2].real_angle;
-    shoot_task.angle_target = shoot_task.motor_info[2].real_angle + 350;
+    shoot_task.angle_target = shoot_task.motor_info[2].out_real_angle + 350;
     if (shoot_task.angle_target > 360)
     {
         shoot_task.angle_target -= 360;
@@ -94,6 +135,7 @@ void Shoot_task(void const *pvParameters)
 
     for (;;)
     {
+        motor_angle_judge(2);
         if (rc_ctrl.rc.s[0] == 1)
         {
             LEDR_ON();
@@ -120,7 +162,7 @@ void Shoot_task(void const *pvParameters)
             LEDR_ON();
             LEDB_OFF();
             LEDG_OFF();
-            if (abs(shoot_task.angle_target - shoot_task.motor_info[2].real_angle) > 5)
+            if (abs(shoot_task.angle_target - shoot_task.motor_info[2].out_real_angle) > 5)
             {
                 shoot_brust();
             }

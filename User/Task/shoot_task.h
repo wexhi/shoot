@@ -14,7 +14,7 @@ typedef struct
     /* data */
     motor_info_t motor_info[3];            // 电机信息结构体
     fp32 speed_motor_pid[3];               // 速度环pid
-    fp32 angle_pid[3];                      // 角度环pid
+    fp32 angle_pid[3];                     // 角度环pid
     volatile int16_t fric_speed_target[2]; // 摩擦轮电机目标值
     volatile int16_t shoot_speed_target;   // 拨盘电机目标值
     int16_t angle_target;
@@ -24,7 +24,18 @@ typedef struct
     pid_struct_t friction_pid[2]; // 摩擦轮电机pid结构体
 } shoot_task_t;
 
+// 一些角度控制的结构体变量
+typedef struct
+{
+    float POS_GAOL; // 目标位置
+    float POS_ABS;  // 绝对位置0
+    float POS_OFFSET;
+    float eer;
+    float eer_eer;
+} ANGLE_TypeDef;
+
 void shoot_task_init(void);
 void Shoot_task(void const *pvParameters);
 void shoot_current_give(void);
+void motor_angle_judge(uint8_t motor_index);
 #endif
